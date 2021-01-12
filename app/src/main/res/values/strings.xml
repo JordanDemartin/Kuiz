@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kuiz</string>
+    <string name="accueil_sous_titre">Votre app de quiz pour passer le temps!</string>
+    <string name="accueil_bouton">Démarrer un quiz !</string>
+    <string name="lancer_quiz_bouton">Lancer le quiz !</string>
+    <string name="choix_nb_question_titre">Nombre de questions:</string>
+    <string name="quiz_valider_reponse">Valider ma réponse</string>
+    <string name="quiz_bouton_question_suivante">Question suivante</string>
+</resources>

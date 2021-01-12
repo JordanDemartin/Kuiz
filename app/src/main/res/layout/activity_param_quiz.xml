@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/param_titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_name"
+        android:layout_marginTop="15dp"
+
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/choix_nb_question_titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/param_titre"
+        android:layout_centerHorizontal="true"
+        android:text="@string/choix_nb_question_titre"
+        android:layout_marginTop="40dp"
+
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/choix_nb_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choix_nb_question_titre"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/radio_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/lancer_quiz_bouton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lancer_quiz_bouton"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/choix_nb_question"
+        android:onClick="onButtonStartClicked"
+
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
