@@ -14,7 +14,7 @@ public class AccesBDInterne extends SQLiteOpenHelper {
     /**
      * Version de la base de données interne
      */
-    public final static int VERSION_BASE = 13;
+    public final static int VERSION_BASE = 14;
 
 
     /**
@@ -310,10 +310,10 @@ public class AccesBDInterne extends SQLiteOpenHelper {
         ajoute_question(sqLiteDatabase, "Quelle est la capitale du Portugal?", "Lisbonne", "Madrid", "Rio de Janeiro", "Buenos Aires", 19, 6);
         ajoute_question(sqLiteDatabase, "Combien de respirations le corps humain prend-il quotidiennement?", "20 000", "5 000", "1 000 000", "50 000", 20, 3);
         ajoute_question(sqLiteDatabase, "Qui était premier ministre de la Grande-Bretagne de 1841 à 1846?", "Robert Peel", "Winston Churchill", "Anthony Eden", "Margaret Thatcher", 21, 7);
-        ajoute_question(sqLiteDatabase, "Quel est le symbole chimique de l'argent?", "Ag", "Arg", "Agt", "Mag", 22, 3);
+        ajoute_question(sqLiteDatabase, "Quel est le symbole chimique de l'argent?", "Ag", "Arg", "Agt", "Si", 22, 3);
         ajoute_question(sqLiteDatabase, "Quel est le nom complet de la poupée Barbie?", "Barbara Millicent Roberts", "Barbara Denver", "Barbara Marianna Handler", "Barbara Mattel", 23, 0);
         ajoute_question(sqLiteDatabase, "Quelle est la durée de vie d'une libellule?", "24 heures", "48 heures", "12 heures", "2 heures", 24, 0);
-        ajoute_question(sqLiteDatabase, "Que signifie « procrastiner » ?", "Parler dans un langage particulièrement vulgaire", "Contredire systématiquement son interlocuteur", "Étudier beaucoup en vue d'un examen", "Remettre à plus tard quelque chose", 25, 0);
+        ajoute_question(sqLiteDatabase, "Que signifie « procrastiner » ?", "Remettre à plus tard quelque chose", "Contredire systématiquement son interlocuteur", "Étudier beaucoup en vue d'un examen", "Parler dans un langage particulièrement vulgaire", 25, 0);
         ajoute_question(sqLiteDatabase, "Qui a inventé le stéthoscope ?", "René Laennec", "Alexander Flemming", "Claude Bernard", "Albert Einstein", 26, 3);
         ajoute_question(sqLiteDatabase, "Qui a inventé la pile électrique ?", "Volta", "Edison", "Becquerel", "Galvani", 27, 3);
         ajoute_question(sqLiteDatabase, "Quelle invention a été mise au point en 1890 par Edouard Branly ?", "La Télégraphie Sans Fil (T.S.F.)", "Un quai amovible, le fameux quai Branly", "La photographie sur papier", "Le téléscope", 28, 3);
@@ -349,7 +349,7 @@ public class AccesBDInterne extends SQLiteOpenHelper {
         ajoute_question(sqLiteDatabase, "Quel est la capitale du Canada?", "Ottawa", "Montréal", "Québec", "Toronto", 58, 7);
         ajoute_question(sqLiteDatabase, "En quelle année, le IIIème Reich a-t-il capitulé ?", "1945", "1942", "1939", "1918", 59, 8);
         ajoute_question(sqLiteDatabase, "En quelle année, l'archiduc François-Ferdinand a-t-il été assassiné ?", "1914", "1870", "1933", "1939", 60, 8);
-        ajoute_question(sqLiteDatabase, "En quelle année, en quelle année ont eu lieu les attentats du 11 septembre ?", "2001", "2000", "2002", "2003", 61, 8);
+        ajoute_question(sqLiteDatabase, "En quelle année ont eu lieu les attentats du 11 septembre ?", "2001", "2000", "2002", "2003", 61, 8);
         ajoute_question(sqLiteDatabase, "En quelle année, JFK a-t-il été assassiné ?", "1963", "1962", "1961", "1960", 62, 8);
         ajoute_question(sqLiteDatabase, "En quelle année, Jeanne d’Arc a-t-elle péri sur le bûcher ?", "1431", "1230", "1702", "1865", 63, 8);
         ajoute_question(sqLiteDatabase, "En quelle année, l’URSS a-t-elle commencé sa dislocation ?", "1990", "1975", "1945", "1918", 64, 8);

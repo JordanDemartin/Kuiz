@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -21,6 +22,7 @@ public class QuizActivity extends Activity {
     private String reponse_joueur;
     private int position_quiz;
     private int compte_bonne_reponse;
+    private BarreProgressionQuiz progression;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,11 +30,13 @@ public class QuizActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_quiz);
 
+
         Intent intent = getIntent();
         this.id_questions = intent.getIntArrayExtra("id_questions");
-
         this.position_quiz = 0;
         this.compte_bonne_reponse = 0;
+        this.progression = new BarreProgressionQuiz(this, id_questions.length, ((RelativeLayout)findViewById(R.id.progress_bar_zone)),100);
+        this.progression.changePaint(position_quiz,Color.parseColor("blue"));
 
         affiche_question();
     }
@@ -146,7 +150,7 @@ public class QuizActivity extends Activity {
                 }
 
                 this.compte_bonne_reponse++;
-                //update barre de progression
+                this.progression.changePaint(position_quiz,Color.parseColor("green"));
             }else{
                 if(reponse_joueur.equals("a")){
                     ((Button)findViewById(R.id.quiz_bouton_reponse_a)).setBackgroundColor(Color.parseColor("red"));
@@ -167,6 +171,9 @@ public class QuizActivity extends Activity {
                 }else if(bonne_reponse.equals("d")){
                     ((Button)findViewById(R.id.quiz_bouton_reponse_d)).setBackgroundColor(Color.parseColor("green"));
                 }
+
+
+                this.progression.changePaint(position_quiz,Color.parseColor("red"));
             }
 
             findViewById(R.id.quiz_bouton_valider_reponse).setVisibility(View.GONE);
@@ -191,6 +198,7 @@ public class QuizActivity extends Activity {
             Log.d("pour " + this.id_questions.length + " questions",this.compte_bonne_reponse + " bonnes réponses");
             finish();
         }else{
+            this.progression.changePaint(position_quiz,Color.parseColor("blue"));
             affiche_question();
         }
     }
