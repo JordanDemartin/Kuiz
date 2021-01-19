@@ -3,7 +3,15 @@
     <string name="accueil_sous_titre">Votre app de quiz pour passer le temps!</string>
     <string name="accueil_bouton">Démarrer un quiz !</string>
     <string name="lancer_quiz_bouton">Lancer le quiz !</string>
+    <string name="choix_difficulte_titre">Difficulté:</string>
+    <string name="choix_difficulte_facile">Facile</string>
+    <string name="choix_difficulte_normal">Normal</string>
+    <string name="choix_difficulte_difficile">Difficile</string>
     <string name="choix_nb_question_titre">Nombre de questions:</string>
     <string name="quiz_valider_reponse">Valider ma réponse</string>
     <string name="quiz_bouton_question_suivante">Question suivante</string>
+    <string name="fin_quiz">Kuiz terminé !</string>
+    <string name="quiz_bouton_quitter">Retour au menu</string>
+    <string name="quiz_bonus_temps">Bonus Temps</string>
+    <string name="quiz_bonus_50_50">Bonus 50/50</string>
 </resources>

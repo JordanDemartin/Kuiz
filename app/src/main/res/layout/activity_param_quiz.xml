@@ -15,13 +15,49 @@
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/choix_nb_question_titre"
+        android:id="@+id/choix_difficulte_titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/param_titre"
         android:layout_centerHorizontal="true"
-        android:text="@string/choix_nb_question_titre"
+        android:text="@string/choix_difficulte_titre"
         android:layout_marginTop="40dp"
+
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/choix_difficulte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choix_difficulte_titre"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/radio_facile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choix_difficulte_facile"
+            android:onClick="onRadioButtonDifficulteClicked"/>
+        <RadioButton android:id="@+id/radio_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choix_difficulte_normal"
+            android:checked="true"
+            android:onClick="onRadioButtonDifficulteClicked"/>
+        <RadioButton android:id="@+id/radio_difficile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choix_difficulte_difficile"
+            android:onClick="onRadioButtonDifficulteClicked"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/choix_nb_question_titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choix_difficulte"
+        android:layout_centerHorizontal="true"
+        android:text="@string/choix_nb_question_titre"
+        android:layout_marginTop="20dp"
 
         android:textSize="20sp" />
 
@@ -37,17 +73,17 @@
             android:layout_height="wrap_content"
             android:text="5"
             android:checked="true"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonNbQuestionClicked"/>
         <RadioButton android:id="@+id/radio_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonNbQuestionClicked"/>
         <RadioButton android:id="@+id/radio_15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="15"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonNbQuestionClicked"/>
     </RadioGroup>
 
     <Button

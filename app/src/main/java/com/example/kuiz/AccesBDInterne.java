@@ -296,7 +296,7 @@ public class AccesBDInterne extends SQLiteOpenHelper {
         ajoute_question(sqLiteDatabase, "Quel est le 2ème nom de l’hippocampe ?", "Le cheval de mer", "L'âne de mer", "Le cheval de terre", "Bob l'éponge", 5, 0);
         ajoute_question(sqLiteDatabase, "Combien de dieu trône a l’Olympe ?", "12", "8", "16", "20", 6, 7);
         ajoute_question(sqLiteDatabase, "Qu’appelle-t-on la canopée ?", "Le sommet d'une forêt", "Une sorte de bateau", "Un long siège à dossier", "Une espèce de champignon", 7, 0);
-        ajoute_question(sqLiteDatabase, "Quelle est la voiture dans Retour vers le futur ?", "Doloréanne", "Twingo", "Limousine", "Multipla", 8, 1);
+        ajoute_question(sqLiteDatabase, "Quelle est la voiture dans Retour vers le futur ?", "Delorean", "Twingo", "Limousine", "Multipla", 8, 1);
         ajoute_question(sqLiteDatabase, "Quel ville est surnommé « big Apple » aux USA ?", "New York", "Washington DC", "Los Angeles", "Chicago", 9, 6);
         ajoute_question(sqLiteDatabase, "De combien de syllabes est composé un alexandrin ?", "12", "10", "8", "6", 10, 5);
         ajoute_question(sqLiteDatabase, "Qui a écrit les misérables ?", "Victor Hugo", "Émile Zola", "Jules Verne", "Michel Vinciguerra", 11, 5);

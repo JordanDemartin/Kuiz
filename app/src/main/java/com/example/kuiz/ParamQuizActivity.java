@@ -16,6 +16,7 @@ import java.util.Random;
 public class ParamQuizActivity extends Activity {
 
     private int nb_question = 5;
+    private String difficulte = "normal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -24,8 +25,26 @@ public class ParamQuizActivity extends Activity {
         setContentView(R.layout.activity_param_quiz);
     }
 
-    public void onRadioButtonClicked(View view) {
-        //est-ce que le bouton
+    public void onRadioButtonDifficulteClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.radio_facile:
+                if (checked)
+                    this.difficulte = "facile";
+                break;
+            case R.id.radio_normal:
+                if (checked)
+                    this.difficulte = "normal";
+                break;
+            case R.id.radio_difficile:
+                if (checked)
+                    this.difficulte = "difficile";
+                break;
+        }
+    }
+
+    public void onRadioButtonNbQuestionClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
 
         switch(view.getId()) {
@@ -86,6 +105,7 @@ public class ParamQuizActivity extends Activity {
 
         Intent i = new Intent(this, QuizActivity.class);
         i.putExtra("id_questions",id_questions);
+        i.putExtra("difficulte",difficulte);
         startActivity(i);
     }
 

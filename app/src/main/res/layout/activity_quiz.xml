@@ -26,14 +26,27 @@
 
 
     <TextView
+        android:id="@+id/quiz_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="X seconde(s)"
+        android:gravity="center"
+        android:layout_below="@id/quiz_sous_titre"
+        android:layout_marginTop="40dp"
+
+        android:textSize="20sp" />
+
+
+    <TextView
         android:id="@+id/quiz_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="blablabla?"
         android:gravity="center"
-        android:layout_below="@id/quiz_sous_titre"
-        android:layout_marginTop="40dp"
+        android:layout_below="@id/quiz_timer"
+        android:layout_marginTop="20dp"
 
         android:textSize="25sp" />
 
@@ -102,7 +115,7 @@
             android:layout_toRightOf="@id/quiz_bouton_reponse_c"
             android:layout_toEndOf="@id/quiz_bouton_reponse_c"
             android:layout_marginTop="5dp"
-            android:layout_below="@id/quiz_bouton_reponse_a"
+            android:layout_below="@id/quiz_bouton_reponse_b"
             android:onClick="onButtonAnswerClicked"
 
             android:textSize="15sp" />
@@ -133,6 +146,68 @@
         android:visibility="gone"
 
         android:textSize="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/quiz_zone_bonus"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quiz_bouton_valider_reponse"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/quiz_bouton_bonus_temps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_bonus_temps"
+            android:textColor="@color/black"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:onClick="onButtonBonusClicked"
+
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/quiz_bouton_bonus_50_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/quiz_bonus_50_50"
+            android:maxWidth="200dp"
+            android:background="#d3d3d3"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/quiz_bouton_bonus_temps"
+            android:layout_toEndOf="@id/quiz_bouton_bonus_temps"
+            android:onClick="onButtonBonusClicked"
+
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/quiz_bouton_quitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/quiz_bouton_quitter"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@id/quiz_score"
+        android:onClick="onButtonRetourneMenuClicked"
+        android:visibility="gone"
+
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/quiz_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Score :"
+        android:layout_above="@id/progress_bar_zone"
+        android:textSize="20sp"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
