@@ -1,3 +1,4 @@
+
 package com.example.kuiz;
 
 import android.content.ContentValues;
@@ -14,7 +15,7 @@ public class AccesBDInterne extends SQLiteOpenHelper {
     /**
      * Version de la base de données interne
      */
-    public final static int VERSION_BASE = 14;
+    public final static int VERSION_BASE = 19;
 
 
     /**
@@ -263,28 +264,28 @@ public class AccesBDInterne extends SQLiteOpenHelper {
 
         //zone themes
         ajoute_theme(sqLiteDatabase,"Culture générale",0);
-        //10 question(s)
+        //15 question(s)
 
         ajoute_theme(sqLiteDatabase,"Films",1);
-        //10 question(s)
+        //15 question(s)
 
         ajoute_theme(sqLiteDatabase,"Sport",2);
-        //11 question(s)
+        //16 question(s)
 
         ajoute_theme(sqLiteDatabase,"Science",3);
-        //10 question(s)
+        //15 question(s)
 
         ajoute_theme(sqLiteDatabase,"Musique",4);
-        //10 question(s)
+        //15 question(s)
 
         ajoute_theme(sqLiteDatabase,"Art",5);
-        //10 question(s)
+        //15 question(s)
 
         ajoute_theme(sqLiteDatabase,"Géographie",6);
-        //10 question(s)
+        //15 question(s)
 
         ajoute_theme(sqLiteDatabase,"Histoire",7);
-        //10 question(s)
+        //15 question(s)
 
 
         //zone questions
@@ -340,19 +341,19 @@ public class AccesBDInterne extends SQLiteOpenHelper {
         ajoute_question(sqLiteDatabase, "En quelle année le footbaleur Zinédine Zidane a-t-il pris sa retraite ?", "2006", "2007", "2008", "2005", 49, 2);
         ajoute_question(sqLiteDatabase, "Quel célèbre basketteur américain est tragiquement décédé d'un accident d'hélicoptère en janvier 2020 ?", "Kobe Bryant", "LeBron James", "Kyrie Irving", "James Harden", 50, 2);
         ajoute_question(sqLiteDatabase, "En quoi consiste le floorball ?", "Du hockey en salle", "Du hockey sur gazon", "Du lancer de ballon", "Une sorte de curling", 51, 2);
-        ajoute_question(sqLiteDatabase, "Laquelle de ces villes n'est pas une capitale?", "Almaty", "Skopje", "Tirana", "Noursoultan", 52, 7);
-        ajoute_question(sqLiteDatabase, "Quelle langue parle-t-on au Chili?", "Espagnol", "Portugais", "Italien", "Anglais", 53, 7);
-        ajoute_question(sqLiteDatabase, "Quel océan borde La Réunion?", "L'océan Indien", "L'océan Atlantique", "L'océan Pacifique", "La mer noire", 54, 7);
-        ajoute_question(sqLiteDatabase, "Quel est le plus petit pays du monde?", "Vatican", "Russie", "Nauru", "Tuvalu", 55, 7);
-        ajoute_question(sqLiteDatabase, "Quel est la capitale du Japon?", "Tokyo", "Kyoto", "Osaka", "Hiroshima", 56, 7);
-        ajoute_question(sqLiteDatabase, "Dans quel pays se trouve la ville de Prague?", "Tchéquie", "Autriche", "Slovaquie", "Hongrie", 57, 7);
-        ajoute_question(sqLiteDatabase, "Quel est la capitale du Canada?", "Ottawa", "Montréal", "Québec", "Toronto", 58, 7);
-        ajoute_question(sqLiteDatabase, "En quelle année, le IIIème Reich a-t-il capitulé ?", "1945", "1942", "1939", "1918", 59, 8);
-        ajoute_question(sqLiteDatabase, "En quelle année, l'archiduc François-Ferdinand a-t-il été assassiné ?", "1914", "1870", "1933", "1939", 60, 8);
-        ajoute_question(sqLiteDatabase, "En quelle année ont eu lieu les attentats du 11 septembre ?", "2001", "2000", "2002", "2003", 61, 8);
-        ajoute_question(sqLiteDatabase, "En quelle année, JFK a-t-il été assassiné ?", "1963", "1962", "1961", "1960", 62, 8);
-        ajoute_question(sqLiteDatabase, "En quelle année, Jeanne d’Arc a-t-elle péri sur le bûcher ?", "1431", "1230", "1702", "1865", 63, 8);
-        ajoute_question(sqLiteDatabase, "En quelle année, l’URSS a-t-elle commencé sa dislocation ?", "1990", "1975", "1945", "1918", 64, 8);
+        ajoute_question(sqLiteDatabase, "Laquelle de ces villes n'est pas une capitale?", "Almaty", "Skopje", "Tirana", "Noursoultan", 52, 6);
+        ajoute_question(sqLiteDatabase, "Quelle langue parle-t-on au Chili?", "Espagnol", "Portugais", "Italien", "Anglais", 53, 6);
+        ajoute_question(sqLiteDatabase, "Quel océan borde La Réunion?", "L'océan Indien", "L'océan Atlantique", "L'océan Pacifique", "La mer noire", 54, 6);
+        ajoute_question(sqLiteDatabase, "Quel est le plus petit pays du monde?", "Vatican", "Russie", "Nauru", "Tuvalu", 55, 6);
+        ajoute_question(sqLiteDatabase, "Quel est la capitale du Japon?", "Tokyo", "Kyoto", "Osaka", "Hiroshima", 56, 6);
+        ajoute_question(sqLiteDatabase, "Dans quel pays se trouve la ville de Prague?", "Tchéquie", "Autriche", "Slovaquie", "Hongrie", 57, 6);
+        ajoute_question(sqLiteDatabase, "Quel est la capitale du Canada?", "Ottawa", "Montréal", "Québec", "Toronto", 58, 6);
+        ajoute_question(sqLiteDatabase, "En quelle année, le IIIème Reich a-t-il capitulé ?", "1945", "1942", "1939", "1918", 59, 7);
+        ajoute_question(sqLiteDatabase, "En quelle année, l'archiduc François-Ferdinand a-t-il été assassiné ?", "1914", "1870", "1933", "1939", 60, 7);
+        ajoute_question(sqLiteDatabase, "En quelle année ont eu lieu les attentats du 11 septembre ?", "2001", "2000", "2002", "2003", 61, 7);
+        ajoute_question(sqLiteDatabase, "En quelle année, JFK a-t-il été assassiné ?", "1963", "1962", "1961", "1960", 62, 7);
+        ajoute_question(sqLiteDatabase, "En quelle année, Jeanne d’Arc a-t-elle péri sur le bûcher ?", "1431", "1230", "1702", "1865", 63, 7);
+        ajoute_question(sqLiteDatabase, "En quelle année, l’URSS a-t-elle commencé sa dislocation ?", "1990", "1975", "1945", "1918", 64, 7);
         ajoute_question(sqLiteDatabase, "Qui est le réalisateur du film Autant en emporte le vent, sorti en 1950 ?", "Victor Fleming", "Martin Scorsese", "Charlie Chaplin", "Frank Morgan", 65, 1);
         ajoute_question(sqLiteDatabase, "Quel film est le plus gros succès au box-office mondial depuis 2019 ?", "Avengers: Endgame", "Le Roi Lion", "Avatar", "Star Wars épisode IX", 66, 1);
         ajoute_question(sqLiteDatabase, "Quel acteur est la vedette de la franchise John Wick ?", "Keanu Reeves", "Matt Madon", "Jason Statham", "Tom Cruise", 67, 1);
@@ -361,14 +362,54 @@ public class AccesBDInterne extends SQLiteOpenHelper {
         ajoute_question(sqLiteDatabase, "Quel acteur est la tête d'affiche du film Drive de Nicolas Winding Refn ?", "Ryan Gosling", "Ben Affleck", "Daniel Craig", "Matt Damon", 70, 1);
         ajoute_question(sqLiteDatabase, "Quelle actrice français incarnait Shosanna Dreyfus dans le film Inglorious Bastards de Quentin Tarantino ?", "Melanie Laurent", "Lea Sedoux", "Melanie Thierry", "Berenice Bejo", 71, 1);
         ajoute_question(sqLiteDatabase, "Qui a obtenu l’Oscar du meilleur acteur en 2000 pour son rôle dans American Beauty ?", "Kevin Spacey", "Russell Crowe", "Sean Penn", "Tom Hanks", 72, 1);
-        ajoute_question(sqLiteDatabase, "À quel mouvement artistique appartenaient Rembrandt, Vermeer,  Velázquez ou Rubens ?", "Le baroque", "Le rococo", "Le pop art", "Le symbolisme", 73, 6);
-        ajoute_question(sqLiteDatabase, "Qui a peint le célèbre tableau « La Nuit étoilée » ?", "Vincent Van Gogh", "Pablo Picasso", "Claude Monet", "Paul Cézanne", 74, 6);
-        ajoute_question(sqLiteDatabase, "À quel peintre doit-on « La Liberté guidant le peuple » ?", "Delacroix", "David", "Géricault", "Rembrandt", 75, 6);
-        ajoute_question(sqLiteDatabase, "Quel architecte conçut le phare d’Alexandrie ?", "Sostrate de Cnide", "Ictinos", "Pythéos de Priène", "Celer", 76, 6);
-        ajoute_question(sqLiteDatabase, "Quel architecte a conçu les Halles de Paris ?", "Victor Baltard", "Blaise Pagan", "Antoine Le Pautre", "Christopher Wren", 77, 6);
-        ajoute_question(sqLiteDatabase, "Quel architecte a construit la pyramide du Louvre ?", "Ieoh Ming Pei", "Jean-Michel Wilmotte", "Philippe Starck", "Oscar Niemeyer", 78, 6);
-        ajoute_question(sqLiteDatabase, "Qui a peint « La Jeune Fille à la Perle » ?", "Vermeer", "Rembrandt", "De Staël", "Picabia", 79, 6);
-        ajoute_question(sqLiteDatabase, "Dans quel musée est exposé le tableau « La Joconde » ?", "Le Louvre", "Le Musée d'Orsay", "L'Ermitage", "Le British Museum", 80, 6);
+        ajoute_question(sqLiteDatabase, "À quel mouvement artistique appartenaient Rembrandt, Vermeer,  Velázquez ou Rubens ?", "Le baroque", "Le rococo", "Le pop art", "Le symbolisme", 73, 5);
+        ajoute_question(sqLiteDatabase, "Qui a peint le célèbre tableau « La Nuit étoilée » ?", "Vincent Van Gogh", "Pablo Picasso", "Claude Monet", "Paul Cézanne", 74, 5);
+        ajoute_question(sqLiteDatabase, "À quel peintre doit-on « La Liberté guidant le peuple » ?", "Delacroix", "David", "Géricault", "Rembrandt", 75, 5);
+        ajoute_question(sqLiteDatabase, "Quel architecte conçut le phare d’Alexandrie ?", "Sostrate de Cnide", "Ictinos", "Pythéos de Priène", "Celer", 76, 5);
+        ajoute_question(sqLiteDatabase, "Quel architecte a conçu les Halles de Paris ?", "Victor Baltard", "Blaise Pagan", "Antoine Le Pautre", "Christopher Wren", 77, 5);
+        ajoute_question(sqLiteDatabase, "Quel architecte a construit la pyramide du Louvre ?", "Ieoh Ming Pei", "Jean-Michel Wilmotte", "Philippe Starck", "Oscar Niemeyer", 78, 5);
+        ajoute_question(sqLiteDatabase, "Qui a peint « La Jeune Fille à la Perle » ?", "Vermeer", "Rembrandt", "De Staël", "Picabia", 79, 5);
+        ajoute_question(sqLiteDatabase, "Dans quel musée est exposé le tableau « La Joconde » ?", "Le Louvre", "Le Musée d'Orsay", "L'Ermitage", "Le British Museum", 80, 5);
+        ajoute_question(sqLiteDatabase, "Qui a inventé le cinéma ?", "Les frères Lumière", "Louis de Broglie", "Louis Blériot", "Nicéphore Niepce", 81, 1);
+        ajoute_question(sqLiteDatabase, "Quel acteur a été classé comme l'acteur n°1 de la légende du cinéma hollywoodien ?", "Humphrey Bogart", "Fred Astaire", "Frank Sinatra", "Rock Hudson", 82, 1);
+        ajoute_question(sqLiteDatabase, "Dans quel film retrouve-t-on la célèbre réplique « Tu les aimes mes cheveux, aussi ? Et mes cuisses ? Tu vois mon derrière dans la glace ? Tu les trouves jolies, mes fesses ? » ?", "Le mépris", "La grande bouffe", "I comme Icare", "Et Dieu ... créa la femme", 83, 1);
+        ajoute_question(sqLiteDatabase, "Dans quel film retrouve-t-on la célèbre réplique « Vous avez de la pâte ? Vous avez du sucre ? Avec la pâte vous faites une crêpe et vous mettez du sucre dessus ! » ?", "Les bronzés font du ski", "Les Grandes vacances", "Le Grand blond avec la chaussure noire", "Rasta Rockett", 84, 1);
+        ajoute_question(sqLiteDatabase, "Quel personnage est le principal antagoniste de la saga Harry Potter ?", "Voldemort", "Dumbledore", "Gollum", "Dark Vador", 85, 1);
+        ajoute_question(sqLiteDatabase, "Combien font 4 x 8 ?", "32", "44", "20", "26", 86, 0);
+        ajoute_question(sqLiteDatabase, "De quelle ville française le cannelé est-il une spécialité ?", "Bordeaux", "Toulouse", "Marseille", "Nantes", 87, 0);
+        ajoute_question(sqLiteDatabase, "Que fête-t-on le 1er mai ?", "Le travail", "Le printemps", "Les mamans", "Le Beaujolais", 88, 0);
+        ajoute_question(sqLiteDatabase, "Quel arbre produit la noix de pécan ?", "Le pacanier", "Le noisetier", "Le macadamia", "Le pécunier", 89, 0);
+        ajoute_question(sqLiteDatabase, "Quel est le nom du principal indice boursier de la place de Paris ?", "Le CAC 40", "Le Dax", "Le Nifty", "Le Footsie", 90, 0);
+        ajoute_question(sqLiteDatabase, "Dans quel sport s’est illustré Michael Jordan ?", "Basket", "Base-ball", "Football américain", "Hockey", 91, 2);
+        ajoute_question(sqLiteDatabase, "Dans quel sport s’est illustré Bjorn Borg ?", "Tennis", "Football", "Escrime", "Golf", 92, 2);
+        ajoute_question(sqLiteDatabase, "Dans quel sport s’est illustré Jean-Claude Killy ?", "Ski", "Voile", "Football", "Escrime", 93, 2);
+        ajoute_question(sqLiteDatabase, "Dans quel sport s’est illustré Jesse Owens ?", "Athlétisme", "Basket-ball", "Tennis", "Cyclisme", 94, 2);
+        ajoute_question(sqLiteDatabase, "Dans quel sport s’est illustré Sergei Bubka ?", "Athlétisme", "Formule 1", "Lutte", "Biathlon", 95, 2);
+        ajoute_question(sqLiteDatabase, "Qu'est-ce que le diaphragme ?", "Un muscle", "Un os", "Une vertèbre", "Un tendon", 96, 3);
+        ajoute_question(sqLiteDatabase, "Quel était le prénom de l’époux de Marie Curie ?", "Pierre", "Hector", "Louis", "Jean", 97, 3);
+        ajoute_question(sqLiteDatabase, "Combien de satellites naturels gravitent autour de la Terre ?", "1", "2", "3", "4", 98, 3);
+        ajoute_question(sqLiteDatabase, "Quelle est la somme des angles d’un triangle ?", "180°", "120°", "90°", "360°", 99, 3);
+        ajoute_question(sqLiteDatabase, "Comment nomme-t-on l’effet d’une glycémie trop élevée ?", "L’hyperglycémie", "L’hypoglycémie", "Les triglycérides", "L’aérophagie", 100, 3);
+        ajoute_question(sqLiteDatabase, "Quel groupe a interprété la chanson « C.R.E.A.M.» ?","Wu-Tang Clan","Black Eyed Peas","Public Enemy","Cypress Hill",101, 4);
+        ajoute_question(sqLiteDatabase, "Quel titre Robin Thicke a-t-il interprété aux côtés de T.I et Pharell Williams ?","Blurred Lines","Everytime","Call On Me","I’m Yours",102, 4);
+        ajoute_question(sqLiteDatabase, "Quelle chanteuse a pris « le large » dans l’une de ses chansons ?","Tal","Amel Bent","Vitaa","Alizée",103, 4);
+        ajoute_question(sqLiteDatabase, "Quel groupe est formé par Thomas Bangalter et Guy-Manuel de Homem-Christo ?","Daft Punk","Poney Poney Run Run","Phoenix","Cocoon",104, 4);
+        ajoute_question(sqLiteDatabase, "Qui est le grand « maître » des valses ?","Johann Strauss","Robert Schumann","Franz Schubert","Franz Liszt",105, 4);
+        ajoute_question(sqLiteDatabase, "En quel matériau était fait le Colosse de Rhodes ?", "En bronze", "En étain", "En ivoire", "En marbre", 106, 5);
+        ajoute_question(sqLiteDatabase, "À quelle hauteur culmine la tour Eiffel ?", "324 mètres", "366 mètres", "478 mètres", "212 mètres", 107, 5);
+        ajoute_question(sqLiteDatabase, "À quel peintre doit-on l'œuvre très célèbre, intitulée « La Laitière » ?", "Johannes Vermeer", "Rembrandt", "Peter Paul Rubens", "Le Caravage", 108, 5);
+        ajoute_question(sqLiteDatabase, "Quel peintre a représenté la fameuse « Fusillade du 3 mai » ?", "Goya", "David", "Delacroix", "El Gréco", 109, 5);
+        ajoute_question(sqLiteDatabase, "Dans quelle ville européenne se trouve le musée Guggenheim ?", "Bilbao", "Berlin", "Londres", "Paris", 110, 5);
+        ajoute_question(sqLiteDatabase, "Dans quelle ville se trouve la Statue de la Liberté ?", "New York", "Washington", "Chicago", "Los Angeles", 111, 6);
+        ajoute_question(sqLiteDatabase, "Sur quel continent le Nil coule-t-il ?", "L’Afrique", "L’Océanie", "L’Europe", "L’Amérique", 112, 6);
+        ajoute_question(sqLiteDatabase, "Dans quelle région se trouve le Mont-Saint-Michel ?", "Normandie", "Pays de la Loire", "Bretagne", "Aquitaine-Limousin-Poitou-Charentes", 113, 6);
+        ajoute_question(sqLiteDatabase, "Avec quel pays, la France n'a-t-elle aucune frontière ?", "Autriche", "Belgique", "Suisse", "Espagne", 114, 6);
+        ajoute_question(sqLiteDatabase, "Quel est le monument principal de la ville de Reims ?", "Sa cathédrale", "Sa boulangerie", "Son musée", "Son obélisque", 115, 6);
+        ajoute_question(sqLiteDatabase, "À quel siècle se déroule la Révolution Française ?","XVIIIème","XIXème","XVIIème","XVIème",116, 7);
+        ajoute_question(sqLiteDatabase, "Qui commanda l'armée des colons lors de la révolution américaine ?","George Washington","William Howe","Paul Revere","Israël Putnam",117, 7);
+        ajoute_question(sqLiteDatabase, "Quel philosophe a écrit : 'Il faut éclairer chaque chose à la lumière de la raison' ?","Diderot","Voltaire","Rousseau","Montesquieu",118, 7);
+        ajoute_question(sqLiteDatabase, "Qui a assassiné Henri IV ?","François Ravaillac","Jacques Clément","Robert-François Damiens","François Ravachol",119, 7);
+        ajoute_question(sqLiteDatabase, "Comment se nomme l'alliance entre l'Allemagne, l'Autriche-Hongrie et l'Italie durant la Première Guerre mondiale ?"," La Triple Alliance","La Triple Entente","Le Triple Saut","Les Trois Frères",120, 7);
     }
 
     private void ajoute_theme(SQLiteDatabase sqLiteDatabase, String nom_theme, int id_theme) {

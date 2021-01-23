@@ -86,6 +86,30 @@
             android:onClick="onRadioButtonNbQuestionClicked"/>
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/choix_theme_titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choix_nb_question"
+        android:layout_centerHorizontal="true"
+        android:text="@string/choix_theme_titre"
+        android:layout_marginTop="20dp"
+
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/choix_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+
+        android:layout_alignLeft="@id/choix_nb_question_titre"
+        android:layout_alignStart="@id/choix_nb_question_titre"
+        android:layout_alignRight="@id/choix_nb_question_titre"
+        android:layout_alignEnd="@id/choix_nb_question_titre"
+        android:layout_below="@id/choix_theme_titre"/>
+
     <Button
         android:id="@+id/lancer_quiz_bouton"
         android:layout_width="wrap_content"
@@ -93,7 +117,7 @@
         android:layout_centerHorizontal="true"
         android:text="@string/lancer_quiz_bouton"
         android:layout_marginTop="40dp"
-        android:layout_below="@id/choix_nb_question"
+        android:layout_below="@id/choix_theme"
         android:onClick="onButtonStartClicked"
 
         android:textSize="20sp" />

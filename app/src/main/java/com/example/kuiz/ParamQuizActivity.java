@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -23,6 +25,11 @@ public class ParamQuizActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_param_quiz);
+
+        Spinner spinner = (Spinner) findViewById(R.id.choix_theme);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.choix_theme, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
 
     public void onRadioButtonDifficulteClicked(View view) {
@@ -67,13 +74,20 @@ public class ParamQuizActivity extends Activity {
         AccesBDInterne acces = new AccesBDInterne(this);
         SQLiteDatabase baseDeDonnees = acces.getReadableDatabase();
         Random ran = new Random();
+        int theme = theme_to_id_theme( ((Spinner)findViewById(R.id.choix_theme)).getSelectedItem().toString() );
         int[] id_questions = new int[this.nb_question];
 
-        Cursor questions = baseDeDonnees.query(true, AccesBDInterne.NOM_TABLE_QUESTION, null , null, null , null, null, null,null);
+        Cursor questions;
+        if(theme == -1){
+            questions = baseDeDonnees.query(true, AccesBDInterne.NOM_TABLE_CONTENIR_THEME_QUESTION, new String[]{AccesBDInterne.CONTENIR_THEME_QUESTION_ID_QUESTION} , null, null , null, null, null,null);
+        }else{
+            //Log.d("theme",""+theme);
+            questions = baseDeDonnees.query(true, AccesBDInterne.NOM_TABLE_CONTENIR_THEME_QUESTION, new String[]{AccesBDInterne.CONTENIR_THEME_QUESTION_ID_QUESTION} , AccesBDInterne.CONTENIR_THEME_QUESTION_ID_THEME +" = ?", new String[]{""+theme} , null, null, null,null);
+        }
 
         if(questions != null){
             if(questions.getCount()>0){
-                Log.d("count question ",""+questions.getCount());
+                //Log.d("count question ",""+questions.getCount());
 
                 for(int i = 0 ; i < this.nb_question ; i++){
                     //génère un int aléatoire
@@ -83,19 +97,20 @@ public class ParamQuizActivity extends Activity {
                     //fais en sorte que le int aléatoire soit entre 0 et questions.getCount()
                     id_question_random = id_question_random%questions.getCount();
 
-                    id_questions[i] = id_question_random;
-                    Log.d("id question random "+i,""+id_questions[i]);
+                    questions.moveToPosition(id_question_random);
+                    id_questions[i] = questions.getInt(0);
+                    //Log.d("id question random "+i,""+id_questions[i]);
 
                     boolean doublon = false;
                     for(int j = 0 ; j < i ; j++){
-                        if(id_questions[j] == id_question_random){
+                        if(id_questions[j] == questions.getInt(0)){
                             doublon = true;
                             break;
                         }
                     }
 
                     if(doublon){
-                        Log.d("y'a un doublon ",""+id_question_random);
+                        //Log.d("y'a un doublon ",""+questions.getInt(0));
                         i--;
                     }
                 }
@@ -107,6 +122,29 @@ public class ParamQuizActivity extends Activity {
         i.putExtra("id_questions",id_questions);
         i.putExtra("difficulte",difficulte);
         startActivity(i);
+    }
+
+    public int theme_to_id_theme(String theme){
+        int id_theme = -1;
+
+        if(theme.equals("Culture générale")){
+            id_theme = 0;
+        }else if(theme.equals("Films")){
+            id_theme = 1;
+        }else if(theme.equals("Sport")){
+            id_theme = 2;
+        }else if(theme.equals("Science")){
+            id_theme = 3;
+        }else if(theme.equals("Musique")){
+            id_theme = 4;
+        }else if(theme.equals("Art")){
+            id_theme = 5;
+        }else if(theme.equals("Géographie")){
+            id_theme = 6;
+        }else if(theme.equals("Histoire")){
+            id_theme = 7;
+        }
+        return id_theme;
     }
 
 }

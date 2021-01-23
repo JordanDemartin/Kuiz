@@ -19,11 +19,12 @@ import java.util.Random;
 public class QuizActivity extends Activity {
 
     private int[] id_questions;
-    private String difficulte;
+    private int multiplicateur_difficulte;
     private String bonne_reponse;
     private String reponse_joueur;
     private int position_quiz;
     private int compte_bonne_reponse;
+    private int bonne_reponse_successif;
     private BarreProgressionQuiz progression;
     private int score;
     private int timer;
@@ -43,9 +44,10 @@ public class QuizActivity extends Activity {
 
         Intent intent = getIntent();
         this.id_questions = intent.getIntArrayExtra("id_questions");
-        this.difficulte = intent.getStringExtra("difficulte");
+        String difficulte = intent.getStringExtra("difficulte");
         this.position_quiz = 0;
         this.compte_bonne_reponse = 0;
+        this.bonne_reponse_successif = 0;
         this.score = 0;
         ((TextView)findViewById(R.id.quiz_score)).setText("Score : " + this.score);
         this.progression = new BarreProgressionQuiz(this, id_questions.length, ((RelativeLayout)findViewById(R.id.progress_bar_zone)),100);
@@ -55,12 +57,15 @@ public class QuizActivity extends Activity {
 
         if(difficulte.equals("facile")){
             this.max_timer = 30;
+            this.multiplicateur_difficulte = 1;
         }else if(difficulte.equals("normal")){
             this.max_timer = 20;
+            this.multiplicateur_difficulte = 2;
             this.bonus_50_50_used = true;
             ((Button)findViewById(R.id.quiz_bouton_bonus_50_50)).setVisibility(View.GONE);
         }else if(difficulte.equals("difficile")){
             this.max_timer = 10;
+            this.multiplicateur_difficulte = 3;
             this.bonus_temps_used = true;
             this.bonus_50_50_used = true;
             ((Button)findViewById(R.id.quiz_bouton_bonus_temps)).setVisibility(View.GONE);
@@ -253,8 +258,9 @@ public class QuizActivity extends Activity {
                 ((Button)findViewById(R.id.quiz_bouton_reponse_d)).setBackgroundColor(Color.parseColor("green"));
             }
 
+            this.score += (10 + this.bonne_reponse_successif) * this.multiplicateur_difficulte;
             this.compte_bonne_reponse++;
-            this.score += 10 * 1;// 1 = difficulté
+            this.bonne_reponse_successif++;
             this.progression.changePaint(position_quiz,Color.parseColor("green"));
         }else{
             if(reponse_joueur.equals("a")){
@@ -278,6 +284,7 @@ public class QuizActivity extends Activity {
             }
 
 
+            this.bonne_reponse_successif = 0;
             this.progression.changePaint(position_quiz,Color.parseColor("red"));
         }
 

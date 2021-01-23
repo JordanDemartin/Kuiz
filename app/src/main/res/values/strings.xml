@@ -8,10 +8,22 @@
     <string name="choix_difficulte_normal">Normal</string>
     <string name="choix_difficulte_difficile">Difficile</string>
     <string name="choix_nb_question_titre">Nombre de questions:</string>
+    <string name="choix_theme_titre">Thème:</string>
     <string name="quiz_valider_reponse">Valider ma réponse</string>
     <string name="quiz_bouton_question_suivante">Question suivante</string>
     <string name="fin_quiz">Kuiz terminé !</string>
     <string name="quiz_bouton_quitter">Retour au menu</string>
     <string name="quiz_bonus_temps">Bonus Temps</string>
     <string name="quiz_bonus_50_50">Bonus 50/50</string>
+    <string-array name="choix_theme">
+        <item>Pas de thème</item>
+        <item>Culture générale</item>
+        <item>Films</item>
+        <item>Sport</item>
+        <item>Science</item>
+        <item>Musique</item>
+        <item>Art</item>
+        <item>Géographie</item>
+        <item>Histoire</item>
+    </string-array>
 </resources>
